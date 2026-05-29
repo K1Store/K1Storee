@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K1 SMP | Official Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;900&display=swap');
+        
+        body { font-family: 'Outfit', sans-serif; background: #050505; color: white; overflow-x: hidden; }
+        
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); }
+        
+        .card-glow:hover { border-color: rgba(230, 0, 57, 0.5); box-shadow: 0 0 30px rgba(230, 0, 57, 0.15); }
+        
+        .btn-block { transition: 0.2s; border-bottom: 4px solid rgba(0,0,0,0.3); }
+        .btn-block:active { transform: translateY(4px); border-bottom: 0; }
+        
+        .particle { position: fixed; background: rgba(230, 0, 57, 0.1); border-radius: 50%; pointer-events: none; animation: float linear infinite; }
+        @keyframes float { 0% { transform: translateY(100vh); opacity: 0; } 50% { opacity: 0.5; } 100% { transform: translateY(-10vh); opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <!-- Particles -->
+    <div id="particles"></div>
+
+    <!-- Nav -->
+    <nav class="fixed w-full z-50 glass border-b border-white/10 p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <img src="46478.jpg" alt="Logo" class="h-12 w-12 rounded-xl border border-white/20">
+            <div class="text-xl font-black italic tracking-tighter">K1 <span class="text-red-600">SMP</span></div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="pt-40 pb-20 px-4 text-center">
+        <h1 class="text-6xl md:text-8xl font-black mb-6 uppercase">Welcome To <br> <span class="text-red-500">K1 SMP Store</span></h1>
+        <p class="text-gray-400 text-xl max-w-lg mx-auto">Purchase ranks, keys and support the server</p>
+    </header>
+
+    <!-- Content -->
+    <main class="max-w-6xl mx-auto px-4 pb-20">
+        
+        <!-- Crates -->
+        <h2 class="text-3xl font-bold mb-10 border-l-4 border-red-600 pl-4">SERVER CRATES</h2>
+        <div class="grid md:grid-cols-3 gap-6 mb-20">
+            <div class="glass p-8 rounded-3xl card-glow text-center">
+                <h3 class="text-2xl font-bold mb-2">Common Key</h3>
+                <div class="text-4xl font-black my-6">₹5</div>
+                <button onclick="toggleModal()" class="w-full bg-red-600 py-4 rounded-xl font-bold btn-block">BUY NOW</button>
+            </div>
+            <div class="glass p-8 rounded-3xl card-glow text-center">
+                <h3 class="text-2xl font-bold mb-2">Blind Key</h3>
+                <div class="text-4xl font-black my-6">₹12</div>
+                <button onclick="toggleModal()" class="w-full bg-red-600 py-4 rounded-xl font-bold btn-block">BUY NOW</button>
+            </div>
+            <div class="glass p-8 rounded-3xl card-glow text-center">
+                <h3 class="text-2xl font-bold mb-2">Light Key</h3>
+                <div class="text-4xl font-black my-6">₹16</div>
+                <button onclick="toggleModal()" class="w-full bg-red-600 py-4 rounded-xl font-bold btn-block">BUY NOW</button>
+            </div>
+        </div>
+
+        <!-- Ranks -->
+        <h2 class="text-3xl font-bold mb-10 border-l-4 border-purple-600 pl-4">PREMIUM RANKS</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass p-8 rounded-3xl card-glow text-center">
+                <h3 class="text-2xl font-bold mb-2">Merchant</h3>
+                <div class="text-4xl font-black my-6">₹15</div>
+                <button onclick="toggleModal()" class="w-full bg-purple-600 py-4 rounded-xl font-bold btn-block">BUY NOW</button>
+            </div>
+            <div class="glass p-8 rounded-3xl card-glow text-center">
+                <h3 class="text-2xl font-bold mb-2">God</h3>
+                <div class="text-4xl font-black my-6">₹20</div>
+                <button onclick="toggleModal()" class="w-full bg-purple-600 py-4 rounded-xl font-bold btn-block">BUY NOW</button>
+            </div>
+            <div class="glass p-8 rounded-3xl card-glow text-center">
+                <h3 class="text-2xl font-bold mb-2">Immortal</h3>
+                <div class="text-4xl font-black my-6">₹24</div>
+                <button onclick="toggleModal()" class="w-full bg-purple-600 py-4 rounded-xl font-bold btn-block">BUY NOW</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="toggleModal()"></div>
+        <div class="glass p-8 rounded-3xl w-full max-w-md relative z-10 border border-white/20 shadow-2xl">
+            <h2 class="text-3xl font-black mb-6">How To Buy?</h2>
+            <ul class="space-y-4 mb-8 text-gray-300">
+                <li>1. Join Our Discord Server</li>
+                <li>2. Create A Ticket</li>
+                <li>3. Tell Us Which Rank Or Key You Want</li>
+                <li>4. Staff Will Explain Benefits And Complete Purchase</li>
+            </ul>
+            <a href="https://discord.gg/y3ZnvcZvZF" class="block text-center w-full bg-indigo-600 py-4 rounded-xl font-black text-xl mb-4 shadow-[0_0_20px_rgba(79,70,229,0.5)] btn-block">CREATE TICKET</a>
+            <p class="text-center text-sm text-gray-500">Join Discord → <a href="https://discord.gg/y3ZnvcZvZF" class="underline">discord.gg/y3ZnvcZvZF</a></p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-10 border-t border-white/5 text-gray-500 italic">
+        Thanks For Supporting K1 SMP ❤️
+    </footer>
+
+    <script>
+        // Particle Script
+        const pContainer = document.getElementById('particles');
+        for(let i=0; i<20; i++){
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.width = Math.random()*10 + 'px';
+            p.style.height = p.style.width;
+            p.style.left = Math.random()*100 + 'vw';
+            p.style.animationDuration = Math.random()*5 + 5 + 's';
+            pContainer.appendChild(p);
+        }
+
+        // Modal Script
+        function toggleModal(){
+            document.getElementById('modal').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
+
+```
